@@ -63,7 +63,6 @@ app.get("/about", (req, res) => {
   
   app.post("/students/add", (req, res) => {
     const studentData = req.body;
-
   collegeData
       .addStudent(studentData)
       .then(() => {
