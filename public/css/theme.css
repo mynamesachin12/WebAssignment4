@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Indie+Flower&family=Kanit&display=swap');
+
+.navbar.bg-light {
+    background-color: #0c1620; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .navbar-light .navbar-brand {
+    font-family: 'Dosis', sans-serif; 
+    color: #9ccc65; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  }
+  
+  
+  .navbar-nav .nav-link {
+    font-family: 'Kanit', sans-serif; 
+    color: #333; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #0277bd !important; 
+  }
+  
+  
+  body {
+    background: linear-gradient(to bottom, #020705, #020c0b);
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    min-height: 100vh;
+  }
+  
+  
+  .btn-primary {
+    background-color: #030b14; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .btn-primary:hover {
+    background-color: #05101d; 
+  }
+  
+  
+  table tr:nth-child(odd) td {
+    background-color: #1b0a0a; 
+  }
+  
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif; 
+    color: #004d40; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  }
+  
+  
+  a {
+    color: #333; 
+  }
+  
+  a:hover {
+    color: #170a0a; 
+  }
+  
+  
+  legend {
+    padding: 10px 0; 
+    font-family: 'Dosis', sans-serif; 
+    color: #3e2723; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  }
+  
