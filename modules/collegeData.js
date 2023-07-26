@@ -1,4 +1,4 @@
-var filesystem = require('fs');
+const myfileSystem = require("fs");
 
 class Data {
   constructor(students, courses) {
@@ -7,97 +7,156 @@ class Data {
   }
 }
 
-let dataCollection = null;
+let myDataCollections = null;
 
 function initialize() {
   return new Promise((resolve, reject) => {
-    filesystem.readFile('./data/students.json', 'utf8', (err, studentDataFromFile) => {
-      if (err) {
-        reject('Unable to read students.json');
-        return;
-      }
-
-      filesystem.readFile('./data/courses.json', 'utf8', (err, courseDataFromFile) => {
+    myfileSystem.readFile(
+      "./data/students.json",
+      "utf8",
+      (err, StudentJson) => {
         if (err) {
-          reject('Unable to read courses.json');
+          reject("unable to read students.json");
           return;
         }
+        myfileSystem.readFile(
+          "./data/courses.json",
+          "utf8",
+          (err, CourseJson) => {
+            if (err) {
+              reject("unable to read courses.json");
+              return;
+            }
 
-        const students = JSON.parse(studentDataFromFile);
-        const courses = JSON.parse(courseDataFromFile);
-        dataCollection = new Data(students, courses);
+            const studentData = JSON.parse(StudentJson);
+            const courseData = JSON.parse(CourseJson);
+            myDataCollections = new Data(studentData, courseData);
 
-        resolve();
-      });
-    });
+            resolve();
+          }
+        );
+      }
+    );
   });
 }
 
 function getAllStudents() {
   return new Promise((resolve, reject) => {
-    if (dataCollection && dataCollection.students.length > 0) {
-      resolve(dataCollection.students);
+    if (myDataCollections && myDataCollections.students.length > 0) {
+      resolve(myDataCollections.students);
     } else {
-      reject('No results returned');
-    }
-  });
-}
-
-function getTAs() {
-  return new Promise((resolve, reject) => {
-    if (dataCollection && dataCollection.students.length > 0) {
-      var tas = dataCollection.students.filter(student => student.TA);
-      resolve(tas);
-    } else {
-      reject('No results returned');
+      reject("no results returned");
     }
   });
 }
 
 function getCourses() {
   return new Promise((resolve, reject) => {
-    if (dataCollection && dataCollection.courses.length > 0) {
-      resolve(dataCollection.courses);
+    if (myDataCollections && myDataCollections.courses.length > 0) {
+      resolve(myDataCollections.courses);
     } else {
-      reject('No results returned');
+      reject("No results returned");
     }
   });
 }
-function getStudentsByCourse () {
-    return new Promise((resolve, reject) => {
-      let result = dataCollection.students.filter(student => student.course === course);
-      if (result.length > 0) resolve(result);
-      else reject("No results returned");
-    });
-  }
-  
-function getStudentByNum() {
-    return new Promise((resolve, reject) => {
-      let result = dataCollection.students.find(student => student.studentNum === num);
-      if (result) resolve(result);
-      else reject("No results returned");
-    });
-  }
-  function addStudent(studentData) {
-    return new Promise((resolve, reject) => {
-      if (studentData.TA === undefined) {
-        studentData.TA = false;
+
+function getStudentByCourse(course) {
+  return new Promise((resolve, reject) => {
+    if (myDataCollections && myDataCollections.students.length > 0) {
+      const sudentsInCourse = myDataCollections.students.filter(
+        (student) => student.course === course
+      );
+      if (sudentsInCourse.length > 0) {
+        resolve(sudentsInCourse);
       } else {
-        studentData.TA = true;
+        reject("No resluts returned");
       }
-      studentData.studentNum = dataCollection.students.length + 1;
-  
-      dataCollection.students.push(studentData);
-      resolve(studentData);
-    });
-  }
-  
+    } else {
+      reject("No results returned");
+    }
+  });
+}
+
+function getStudentByNum(num) {
+  return new Promise((resolve, reject) => {
+    if (myDataCollections && myDataCollections.students.length > 0) {
+      const student = myDataCollections.students.find(
+        (student) => student.studentNum === num
+      );
+      if (student) {
+        resolve(student);
+      } else {
+        reject("No results returned");
+      }
+    } else {
+      reject("No results returned");
+    }
+  });
+}
+
+function addStudent(studentData) {
+  return new Promise((resolve, reject) => {
+    if (studentData.TA === undefined) {
+      studentData.TA = false;
+    } else {
+      studentData.TA = true;
+    }
+    studentData.studentNum = myDataCollections.students.length + 1;
+
+    myDataCollections.students.push(studentData);
+    resolve(studentData);
+  });
+}
+
+function getCourseById(id) {
+  return new Promise((resolve, reject) => {
+    if (myDataCollections && myDataCollections.courses.length > 0) {
+      const course = myDataCollections.courses.find(
+        (course) => course.courseId === id
+      );
+      if (course) {
+        resolve(course);
+      } else {
+        reject("query returned 0 results");
+      }
+    } else {
+      reject("query returned 0 results");
+    }
+  });
+}
+
+let students = []; // Assuming this array contains student data
+
+function updateStudent(studentData) {
+  return new Promise((resolve, reject) => {
+    // Find the index of the student with a matching studentNum
+    const studentIndex = students.findIndex(student => student.studentNum === studentData.studentNum);
+
+    if (studentIndex !== -1) {
+      // Update the student's information
+      students[studentIndex].email = studentData.email;
+      students[studentIndex].addressStreet = studentData.addressStreet;
+      students[studentIndex].addressCity = studentData.addressCity;
+      students[studentIndex].addressProvince = studentData.addressProvince;
+      students[studentIndex].TA = !!studentData.TA;
+      students[studentIndex].status = studentData.status;
+      students[studentIndex].course = parseInt(studentData.course, 10);
+
+      resolve(); // Resolve the promise without any data
+    } else {
+      reject(new Error("Student not found")); // Reject the promise with an error if studentNum is not found
+    }
+  });
+}
+
 module.exports = {
   initialize,
   getAllStudents,
-  getTAs,
   getCourses,
-  getStudentsByCourse,
+  getStudentByCourse,
   getStudentByNum,
-  addStudent
+  addStudent,
+  getCourseById,
+  students,
+  updateStudent
 };
