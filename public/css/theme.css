@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Indie+Flower&family=Kanit&display=swap');
 
 .navbar.bg-light {
-    background-color: #0c1620; 
+    background-color: #b4cde5; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   }
   
@@ -33,41 +33,41 @@
   
   
   .btn-primary {
-    background-color: #030b14; 
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #c5d9ef; 
+    text-shadow: 1px 1px 1px rgba(243, 181, 181, 0.2); 
+    box-shadow: 0 2px 4px rgba(232, 198, 198, 0.1); 
   }
   
   .btn-primary:hover {
-    background-color: #05101d; 
+    background-color: #a9c5e8; 
   }
   
   
   table tr:nth-child(odd) td {
-    background-color: #1b0a0a; 
+    background-color: #e5b4b4; 
   }
   
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Dosis', sans-serif; 
-    color: #004d40; 
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+    color: #b6f0e6; 
+    text-shadow: 1px 1px 1px rgba(248, 192, 192, 0.2); 
   }
   
   
   a {
-    color: #333; 
+    color: #e7c3c3; 
   }
   
   a:hover {
-    color: #170a0a; 
+    color: #eeb7b7; 
   }
   
   
   legend {
     padding: 10px 0; 
     font-family: 'Dosis', sans-serif; 
-    color: #3e2723; 
+    color: #e9bfb7; 
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
   }
   
