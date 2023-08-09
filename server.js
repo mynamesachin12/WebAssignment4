@@ -10,16 +10,7 @@
 * Online (Cyclic) Link: 
 *
 =======
-* WEB700 – Assignment 04
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
-* of this assignment has been copied manually or electronically from any other source
-* (including 3rd party web sites) or distributed to other students.
-
-
-* Name: Sachin Sapkota Student ID:113877229 Date: 12 July 2023
-* Online (Cyclic) Link: https://red-cute-jay.cyclic.app
->>>>>>> 954cbaf9fbc47afcb8ddc43c99e48134f4ea8da5
-********************************************************************************/
+*/
 
 var HTTP_PORT = process.env.PORT || 8080;
 var express = require('express');
