@@ -1,69 +1,93 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;1,100&family=Roboto+Mono:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Indie+Flower&family=Kanit&display=swap');
 
-body {
-  background: linear-gradient(to bottom, #aeb1b0, #c5e3de);
-  background-image: url("../images/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+.navbar.bg-light {
+    background-color: #1a73cd; 
+    box-shadow: 0 2px 4px rgba(238, 75, 75, 0.1); 
+  }
   
-  min-height: 100vh;
-}
-.bg-light {
-  background: linear-gradient(to bottom, #2f3837 10%, #687e7a 90%);
-  box-shadow: 0px 2px 4px rgba(215, 35, 35, 0.1);
-}
-
-.navbar-brand {
-  font-family: 'Pacifico', cursive;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  color: #aeb1b0 !important;
-}
-
-.nav-link {
-  font-family: "Montserrat", cursive;
-  color: #c5e3de !important;
-}
-
-.nav-link:hover {
-  color: #2f3837 !important;
-}
-
-.btn-primary {
-  background-color: #16385c; 
-  text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.2); 
-  box-shadow: 0 2px 4px rgba(27, 26, 26, 0.1); 
-}
-
-.btn-primary:hover {
-  background-color: #579ae2; 
-}
-
-
-a {
-  color: #4e3939; 
-}
-
-a:hover {
-  color: #d9efad; 
-}
-
-
-table tr:nth-child(odd) td {
-  background-color: #f0f0f0; 
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Fasthand', cursive;
-  color: #468e74; 
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
-}
-
-legend {
-  padding: 5px 0; 
-  font-family: 'Fasthand', cursive;
-  color: #34233e; 
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
-}
-
-
+  .navbar-light .navbar-brand {
+    font-family: 'Dosis', sans-serif; 
+    color: #9ccc65; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  }
+  
+  
+  .navbar-nav .nav-link {
+    font-family: 'Kanit', sans-serif; 
+    color: #e68888; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #0277bd !important; 
+  }
+  
+  
+  body {
+    background: linear-gradient(to bottom, #27c787, #2ec7b8);
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    min-height: 100vh;
+  }
+  
+  
+  .btn-primary {
+    background-color: #5a81ad; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .btn-primary:hover {
+<<<<<<< HEAD
+    background-color: #94bff3; 
+=======
+    background-color: #64a0ef; 
+>>>>>>> da78fbcf2283c699d095b012aa63449e98ef89e2
+  }
+  
+  
+  table tr:nth-child(odd) td {
+<<<<<<< HEAD
+    background-color: #e5b0b0; 
+=======
+    background-color: #f09191; 
+>>>>>>> da78fbcf2283c699d095b012aa63449e98ef89e2
+  }
+  
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif; 
+    color: #85f3e0; 
+    text-shadow: 1px 1px 1px rgba(245, 182, 182, 0.2); 
+  }
+  
+  
+  a {
+<<<<<<< HEAD
+    color: #ecbcbc; 
+  }
+  
+  a:hover {
+    color: #eca9a9; 
+=======
+    color: #0e0101; 
+  }
+  
+  a:hover {
+    color: #cc7a7a; 
+>>>>>>> da78fbcf2283c699d095b012aa63449e98ef89e2
+  }
+  
+  
+  legend {
+    padding: 10px 0; 
+    font-family: 'Dosis', sans-serif; 
+<<<<<<< HEAD
+    color: #f5b0a4; 
+=======
+    color: #f6f1f0; 
+>>>>>>> da78fbcf2283c699d095b012aa63449e98ef89e2
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+  }
+  
