@@ -1,36 +1,36 @@
-<div class="row">
-  <div class="col-md-12">
-    <br />
-    <h2>Courses</h2>
-    <hr />
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <td>Course Code</td>
-            <td>Course Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each courses}}
-            <tr>
-              <td><a href="/course/{{this.courseId}}" />{{this.courseCode}}
-              </td>
-              <td><a
-                  href="/students?course={{this.courseId}}"
-                />{{this.courseDescription}}</td>
-            </tr>
-
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="col-md-12 text-center">
-    {{#unless courses}}
-
-      <strong>{{message}}</strong>
-    {{/unless}}
-
-  </div>
+<div class="row"> 
+    <div class="col-md-12">
+        <br> 
+        <h2>Courses
+            <a href="/courses/add" class="btn btn-success float-right">Add New Course</a>
+        </h2> 
+        {{#unless courses}}
+            <div class="col-md-12 text-center"> 
+                <strong>{{message}}</strong> 
+            </div>     
+          <br>
+        {{else}}  
+          <hr /> 
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover table-info">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each courses}}
+                    <tr>
+                        <td><a href="/course/{{courseId}}">{{courseCode}}</a></td>
+                        <td><a href="/students?course={{courseId}}">{{courseDescription}}</a></td>
+                        <td><a href="/course/delete/{{courseId}}"><button class="btn btn-danger">remove</button></a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+          </div>
+        {{/unless}}  
+    </div> 
 </div>

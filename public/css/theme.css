@@ -14,7 +14,7 @@
   
   .navbar-nav .nav-link {
     font-family: 'Kanit', sans-serif; 
-    color: #e68888; 
+    color: #b1eeab; 
   }
   
   .navbar-nav .nav-link:hover {
@@ -44,7 +44,7 @@
   
   
   table tr:nth-child(odd) td {
-    background-color: #f09191; 
+    background-color: #e2f5c3; 
   }
   
   
